@@ -45,6 +45,8 @@ public class Validate {
                 rightChar.add(ch);
                 if(leftChar.size() == 0) {
                     isValid = false;
+                } else if(leftChar.size() > 1 && i == (equationCharArray.length - 1)) {
+                    isValid = false;
                 } else {
                     leftChar.pop();
                 }
