@@ -1,7 +1,5 @@
 package uts;
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -18,14 +16,14 @@ public class Validate {
         System.out.print("Masukan persamaan = ");
         String equation = scanner.nextLine();
         char[] equationCharArray = equation.toCharArray();
-        for (int i = 0; i < equationCharArray.length; i++) {
-            char ch = equationCharArray[i];
-            if(ch == ' '){
-                continue;
-            }
+        for (int index = 0; index < equationCharArray.length; index++) {
+            char ch = equationCharArray[index];
             if(ch != '1' && ch != '+' && ch != '=') {
                 isNotValidCharacter = true;
                 break;
+            }
+            if(ch == ' ' || ch == '+'){
+                continue;
             }
             if(ch == '=' ) {
                 if(isFoundEqual) {
@@ -35,9 +33,6 @@ public class Validate {
                 isInRight = true;
                 continue;
             }
-            if(ch == '+') {
-                continue;
-            }
             if(!isInRight) {
                 leftChar.add(ch);
             }
@@ -45,7 +40,7 @@ public class Validate {
                 rightChar.add(ch);
                 if(leftChar.size() == 0) {
                     isValid = false;
-                } else if(leftChar.size() > 1 && i == (equationCharArray.length - 1)) {
+                } else if(leftChar.size() > 1 && index == (equationCharArray.length - 1)) {
                     isValid = false;
                 } else {
                     leftChar.pop();
