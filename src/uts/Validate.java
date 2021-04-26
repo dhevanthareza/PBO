@@ -18,12 +18,12 @@ public class Validate {
         char[] equationCharArray = equation.toCharArray();
         for (int index = 0; index < equationCharArray.length; index++) {
             char ch = equationCharArray[index];
+            if(ch == ' ' || ch == '+'){
+                continue;
+            }
             if(ch != '1' && ch != '+' && ch != '=') {
                 isNotValidCharacter = true;
                 break;
-            }
-            if(ch == ' ' || ch == '+'){
-                continue;
             }
             if(ch == '=' ) {
                 if(isFoundEqual) {
