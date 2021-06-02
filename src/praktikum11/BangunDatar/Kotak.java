@@ -1,6 +1,6 @@
 package praktikum11.BangunDatar;
 
-public class Kotak extends BangunDatar {
+public class Kotak extends BangunDatar implements Resizeable {
     int panjang, lebar;
 
     public Kotak(int sisi, int panjang, int lebar) {
@@ -11,11 +11,6 @@ public class Kotak extends BangunDatar {
 
     @Override
     public void draw() {
-
-    }
-
-    @Override
-    public void resize() {
 
     }
 
@@ -32,5 +27,11 @@ public class Kotak extends BangunDatar {
     @Override
     public double getKeliling() {
         return (this.panjang * 2) + (this.lebar * 2);
+    }
+
+    @Override
+    public void resize(double x) {
+        this.panjang = (int) (this.panjang * x);
+        this.lebar  = (int) (this.lebar * x);
     }
 }

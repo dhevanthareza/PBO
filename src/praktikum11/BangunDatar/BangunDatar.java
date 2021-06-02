@@ -12,7 +12,6 @@ public abstract class BangunDatar {
     }
 
     public abstract void draw();
-    public abstract void resize();
     public abstract int getJumlahSisi();
     public abstract double getLuas();
     public abstract  double getKeliling();

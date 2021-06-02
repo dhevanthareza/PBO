@@ -14,11 +14,6 @@ public class Segitiga extends BangunDatar{
     }
 
     @Override
-    public void resize() {
-
-    }
-
-    @Override
     public int getJumlahSisi() {
         return this.getJumlahSisi();
     }
